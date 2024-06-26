@@ -33,12 +33,12 @@ def main():
     print("Original Message:", message)
 
     # Encryption
-    encrypted_message = rc4_encrypt(message.encode(), key)
+    encrypted_message = rc4_encrypt(message.encode('utf-8'), key)
     print("\nEncrypted Message:", encrypted_message.hex())
 
     # Decryption
     decrypted_message = rc4_decrypt(encrypted_message, key)
-    print("\nDecrypted Message:", decrypted_message.decode())
+    print("\nDecrypted Message:", decrypted_message.decode('utf-8'))
 
-if _name_ == "_main_":
+if __name__ == "__main__":
     main()
